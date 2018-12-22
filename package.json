@@ -1,0 +1,20 @@
+{
+  "name": "vision2",
+  "version": "2.0.0",
+  "description": "minor Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start":"node app.js"
+  },
+  "author": "DIRUS",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "node-cloud-vision-api": "^0.2.0",
+    "request": "^2.83.0"
+  }
+}

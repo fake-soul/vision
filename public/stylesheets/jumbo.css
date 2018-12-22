@@ -1,0 +1,18 @@
+.jumbotron
+{
+    color: whitesmoke;
+    margin: 100px;  
+    
+    height: 400px;
+    padding-top: 70px;
+    background-repeat: no-repeat;
+    background-image: url(https://images.unsplash.com/photo-1458040937381-49c067dfd49a?ixlib=rb-0.3.5&s=7334170a7e620c5148ae03fcb3d715db&auto=format&fit=crop&w=750&q=80);
+    background-size: 100% 100%;
+}
+.Back
+{
+    padding: auto;
+    margin-left: 300px;
+    margin-top: 20px;
+
+}

@@ -1,0 +1,166 @@
+<% include partials/header %>
+<div class = "container">
+    <div class="row">
+        <div class="col-sm-3">
+            <p class="lead">Dirus</p>
+            <div class="well">
+                <h4>Labels</h4>
+                <% element.data[0]["labelAnnotations"].forEach(function(data){ %>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <%= data["description"].toUpperCase() %>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: <%= Math.ceil(data["score"]*100)%>%;">
+                                <span><%= Math.ceil(data["score"]*100) %>%</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <% }) %>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= element.image %>" alt="">
+            </div>
+            <div class="well">
+                <div class="caption-full">
+                    <h4><strong>Best Guess</strong></h4>
+                    <strong>
+                        <% element.data[0]["webDetection"]["bestGuessLabels"].forEach(function(data){ %>
+                            <li><%= data["label"] %></li>
+                            <% }) %>
+                    </strong>
+                </div>
+            </div>
+<!-- ///============================= -->
+
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Web Entities</button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Web Entities</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+                <!-- ///////// -->
+                <strong>
+                    <% element.data[0]["webDetection"]["webEntities"].forEach(function(data){ %>
+                        <li><%= data["description"] %>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: <%= Math.ceil(data["score"]*100)%>%;">
+                                <span><%= Math.ceil(data["score"]*100) %>%</span>
+                            </div>
+                        </div>
+                        </li>
+                        <% }) %>
+                </strong>
+
+                <!-- ////////// -->
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+<!-- ///====================================== -->
+
+<!-- ///============================= -->
+<br>
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Pages With Matching Images</button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" role="dialog">
+      <div class="modal-dialog modal-lg">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Matching Images</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+                 <!-- ///////// -->
+                 <strong>
+                    <% element.data[0]["webDetection"]["pagesWithMatchingImages"].forEach(function(data){ %>
+                        <li><a href=<%= data["url"] %>><%= data["url"] %></a></li>
+                        <!-- <%= data["url"] %> -->
+                        <% }) %>
+                </strong>
+
+                <!-- ////////// -->
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  <br>
+<!-- ///====================================== -->
+
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">Visually Similar Images</button>
+    <br>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal3" role="dialog">
+      <div class="modal-dialog modal-lg">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Visually Similar Images</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+                <!-- ///////// -->
+                <strong>
+                    <% element.data[0]["webDetection"]["visuallySimilarImages"].forEach(function(data){ %>
+                        <!-- <li><a href=<%= data["url"] %>>hello</a></li> -->
+                        <li><a href=<%= data["url"] %>><%= data["url"] %></a></li>
+                        <% }) %>
+                </strong>
+
+                <!-- ////////// -->
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+<!-- ///====================================== -->
+
+        </div>
+    </div>
+</div>

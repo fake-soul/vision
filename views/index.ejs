@@ -1,0 +1,29 @@
+<% include partials/header %>
+<div class="container">
+        <link rel="stylesheet" href="/stylesheets/jumbo.css">
+    <header class="jumbotron">
+        <div class="container" >
+            <h1>Welcome to DIRUS</h1>
+            <p>Upload Your image for label detection</p>
+            <form action="/detect" method="POST">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Image Url" name="image">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                  </div>
+                </div>
+              </form>
+              <a href="/" class="Back btn btn-danger"><i class="fas fa-arrow-circle-left"></i>  Go Back</a>
+        </div>
+    </header>
+    <!-- <div class="row" >
+        <h1 style="text-align:center">Add a new CampGround</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/detect" method="POST">
+                <div class="form-group"><input class="form-control" type="text" name="image" placeholder="image url"></div>
+                <div class="form-group"><button class="btn btn-lg btn-primary btn-block" >SUBMIT</button></div>
+            </form>
+            <a href="/">Go Back</a>
+        </div>
+    </div> -->
+</div>
